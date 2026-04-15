@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Background particles layer -->
+  <div id="bg-particles" class="bg-particles" aria-hidden="true"></div>
+
+  <!-- Border decoration layer -->
+  <div id="border-decoration" class="border-decoration" aria-hidden="true"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1 id="app-title" class="app-title">Reading Adventure</h1>
+      <p id="app-tagline" class="app-tagline">Read all 30 books!</p>
+      <div class="switchers">
+        <div class="switcher-group">
+          <label id="theme-label" for="theme-select">Theme:</label>
+          <select id="theme-select"></select>
+        </div>
+        <div class="switcher-group">
+          <label id="lang-label" for="lang-select">Language:</label>
+          <select id="lang-select">
+            <option value="en" selected>English</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+      </div>
+      <p id="progress-text" class="progress-text">0 / 30 books read</p>
+    </div>
+
+    <!-- Book grid -->
+    <div id="book-grid" class="book-grid"></div>
+
+    <!-- All-complete banner -->
+    <div id="complete-banner" class="complete-banner hidden">
+      <p id="complete-message"></p>
+    </div>
+  </div>
+
+  <!-- Modal overlay -->
+  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-celebration" class="modal-celebration" aria-hidden="true"></div>
+      <h2 id="modal-title" class="modal-title"></h2>
+      <p id="modal-emoji" class="modal-emoji"></p>
+      <p id="modal-book-label" class="modal-book-label"></p>
+      <div class="modal-actions">
+        <button id="btn-mark-read" class="btn btn-primary">Mark as Read ✅</button>
+        <button id="btn-mark-unread" class="btn btn-secondary hidden">Mark Unread</button>
+      </div>
+      <p id="modal-celebrate-text" class="modal-celebrate-text hidden"></p>
+    </div>
+  </div>
+
+  <!-- i18n + Theme files -->
+  <script src="i18n.js"></script>
+  <script src="themes/space-explorer.js"></script>
+  <script src="themes/monster-collection.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
